@@ -10,6 +10,6 @@ class City {
 
   factory City.fromJson(Map<String, dynamic> json) => _$CityFromJson(json);
 
-  /// Connect the generated [_$PersonToJson] function to the `toJson` method.
+  /// Connect the generated [_$CityToJson] function to the `toJson` method.
   Map<String, dynamic> toJson() => _$CityToJson(this);
 }

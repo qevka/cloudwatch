@@ -1,3 +1,5 @@
+import 'package:cloudwatch/models/meta_weather_model.dart';
+import 'package:cloudwatch/services/meta_weather.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -48,9 +50,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final _weatherService = WeatherService();
   int _counter = 0;
 
-  void _incrementCounter() {
+  void _incrementCounter() async {
+    MetaWeatherModel model = await _weatherService.fetchAlbum();
+    print(model.consolidatedWeather![0].maxTemp);
+    print("temp");
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
