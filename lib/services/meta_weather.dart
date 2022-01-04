@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:cloudwatch/models/meta_weather_model.dart';
 import 'package:http/http.dart' as http;
 
-class WeatherService {
+class MetaWeatherService {
   // must get the woeid and pass it into this url to get the weather returned.
   String _path = 'https://www.metaweather.com/api/location/2490383';
 
