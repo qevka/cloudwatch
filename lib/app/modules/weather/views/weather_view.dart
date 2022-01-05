@@ -1,26 +1,20 @@
-import 'package:cloudwatch/Screens/weather/weather_controller.dart';
 import 'package:cloudwatch/Screens/weather/weather_types.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../controllers/weather_controller.dart';
+
 class WeatherView extends GetView<WeatherController> {
-  WeatherTypes weather = controller.weatherModel.weatherReports[0].weather!;
-
-  GetPageBuilder onPageBuildStart(GetPageBuilder page) {
-    print('bindings are ready');
-    return page;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(gradient: weather.gradient),
+            decoration: BoxDecoration(gradient: controller.weather.gradient),
           ),
-          weather.animation,
+          controller.weather.animation,
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(15.0),
@@ -36,8 +30,9 @@ class WeatherView extends GetView<WeatherController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "New Zealand".toUpperCase(),
-                            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w300, color: weather.textColors),
+                            controller.report.weatherStateName!.toUpperCase(),
+                            style:
+                                TextStyle(fontSize: 25, fontWeight: FontWeight.w300, color: controller.weather.textColors),
                           ),
                           SizedBox(
                             height: 20,
@@ -45,7 +40,8 @@ class WeatherView extends GetView<WeatherController> {
                           Text(
                             "-5" + "°",
                             style: GoogleFonts.spartan(
-                                textStyle: TextStyle(fontSize: 180, fontWeight: FontWeight.w400, color: weather.textColors)),
+                                textStyle: TextStyle(
+                                    fontSize: 180, fontWeight: FontWeight.w400, color: controller.weather.textColors)),
                           )
                         ],
                       ),
@@ -54,7 +50,8 @@ class WeatherView extends GetView<WeatherController> {
                         child: RotatedBox(
                           child: Text(
                             "It's Sunny",
-                            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20, color: weather.textColors),
+                            style:
+                                TextStyle(fontWeight: FontWeight.w600, fontSize: 20, color: controller.weather.textColors),
                           ),
                           quarterTurns: 3,
                         ),
@@ -74,19 +71,19 @@ class WeatherView extends GetView<WeatherController> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           WeatherDataPoint(
-                            data: "67%",
+                            data: controller.report.humidity.toString(),
                             title: "Humidity",
-                            weather: weather,
+                            weather: controller.weather,
                           ),
                           WeatherDataPoint(
-                            data: "3.99",
-                            title: "Visibility",
-                            weather: weather,
+                            data: controller.report.windDirection.toString(),
+                            title: "Wind Direction",
+                            weather: controller.weather,
                           ),
                           WeatherDataPoint(
-                            data: "7.01",
+                            data: controller.report.windSpeed.toString(),
                             title: "Wind Speed",
-                            weather: weather,
+                            weather: controller.weather,
                           )
                         ],
                       ),

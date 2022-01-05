@@ -1,10 +1,10 @@
 import 'package:cloudwatch/Screens/weather/weather_types.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'meta_weather_model.g.dart';
+part 'weather_model.g.dart';
 
 @JsonSerializable()
-class MetaWeatherModel {
+class WeatherModel {
   List<WeatherReport>? weatherReports;
   String? time;
   String? sunRise;
@@ -18,7 +18,7 @@ class MetaWeatherModel {
   String? lattLong;
   String? timezone;
 
-  MetaWeatherModel(
+  WeatherModel(
       {this.weatherReports,
       this.time,
       this.sunRise,
@@ -32,7 +32,7 @@ class MetaWeatherModel {
       this.lattLong,
       this.timezone});
 
-  MetaWeatherModel.fromServer(Map<String, dynamic> json) {
+  WeatherModel.fromServer(Map<String, dynamic> json) {
     if (json['consolidated_weather'] != null) {
       weatherReports = <WeatherReport>[];
       json['consolidated_weather'].forEach((v) {
@@ -57,7 +57,7 @@ class MetaWeatherModel {
     timezone = json['timezone'];
   }
 
-  factory MetaWeatherModel.fromJson(Map<String, dynamic> json) => _$MetaWeatherModelFromJson(json);
+  factory WeatherModel.fromJson(Map<String, dynamic> json) => _$MetaWeatherModelFromJson(json);
 
   /// Connect the generated [_$MetaWeatherModelToJson] function to the `toJson` method.
   Map<String, dynamic> toJson() => _$MetaWeatherModelToJson(this);
