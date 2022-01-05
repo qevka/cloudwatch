@@ -3,22 +3,22 @@ import 'package:get/get.dart';
 import 'package:parallax_rain/parallax_rain.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
-enum WeatherTypes { snow, sleet, hail, thunder, heavyRain, lightRain, Showers, heavyClouds, lightClouds, clear }
+enum WeatherTypes { sn, sl, h, t, hr, lr, s, hc, lc, c }
 
-extension WeatherAnimationExtention on WeatherTypes {
+extension WeatherExtension on WeatherTypes {
   Widget get animation {
     switch (this) {
-      case WeatherTypes.hail:
+      case WeatherTypes.h:
         return _sleet;
-      case WeatherTypes.sleet:
+      case WeatherTypes.sl:
         return _sleet;
-      case WeatherTypes.snow:
+      case WeatherTypes.sn:
         return _snow;
-      case WeatherTypes.heavyRain:
+      case WeatherTypes.hr:
         return _heavyRain;
-      case WeatherTypes.lightRain:
+      case WeatherTypes.lr:
         return _ligthRain;
-      case WeatherTypes.Showers:
+      case WeatherTypes.s:
         return _mediumRain;
       default:
         return Container();
@@ -27,24 +27,32 @@ extension WeatherAnimationExtention on WeatherTypes {
 
   LinearGradient get gradient {
     switch (this) {
-      case WeatherTypes.hail:
+      case WeatherTypes.h:
         return const LinearGradient(
             begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.lightGreen, Colors.green]);
-      case WeatherTypes.sleet:
+      case WeatherTypes.sl:
         return const LinearGradient(
             begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.lightGreen, Colors.green]);
-      case WeatherTypes.snow:
-        return LinearGradient(
-            begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.lightBlueAccent, Colors.blue.shade900]);
-      case WeatherTypes.heavyRain:
-        return LinearGradient(
-            begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.lightBlueAccent, Colors.blue.shade900]);
-      case WeatherTypes.clear:
-        return LinearGradient(
-            begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.amber.shade300, Colors.amber.shade900]);
+      case WeatherTypes.c:
+        return LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [
+          Colors.lightBlueAccent,
+          Colors.lightBlueAccent,
+          Colors.lightBlueAccent,
+          Colors.lightBlueAccent,
+          Colors.lightBlueAccent,
+          Colors.green.shade200,
+          Colors.amber.shade100
+        ]);
       default:
         return LinearGradient(
-            begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.lightBlueAccent, Colors.blue.shade900]);
+            begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.blue.shade900, Colors.lightBlueAccent]);
+    }
+  }
+
+  Color get textColors {
+    switch (this) {
+      default:
+        return Colors.white;
     }
   }
 
@@ -116,6 +124,12 @@ extension WeatherAnimationExtention on WeatherTypes {
           Colors.white60,
         ]),
   );
-}
 
-class WeatherAnimation {}
+  static WeatherTypes tryParse(dynamic index, {required WeatherTypes ifNull}) {
+    try {
+      return WeatherTypes.values[index];
+    } catch (ex) {
+      return ifNull;
+    }
+  }
+}

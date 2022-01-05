@@ -1,10 +1,11 @@
+import 'package:cloudwatch/Screens/weather/weather_types.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'meta_weather_model.g.dart';
 
 @JsonSerializable()
 class MetaWeatherModel {
-  List<WeatherReport>? consolidatedWeather;
+  List<WeatherReport>? weatherReports;
   String? time;
   String? sunRise;
   String? sunSet;
@@ -18,7 +19,7 @@ class MetaWeatherModel {
   String? timezone;
 
   MetaWeatherModel(
-      {this.consolidatedWeather,
+      {this.weatherReports,
       this.time,
       this.sunRise,
       this.sunSet,
@@ -33,9 +34,9 @@ class MetaWeatherModel {
 
   MetaWeatherModel.fromServer(Map<String, dynamic> json) {
     if (json['consolidated_weather'] != null) {
-      consolidatedWeather = <WeatherReport>[];
+      weatherReports = <WeatherReport>[];
       json['consolidated_weather'].forEach((v) {
-        consolidatedWeather!.add(new WeatherReport.fromServer(v));
+        weatherReports!.add(new WeatherReport.fromServer(v));
       });
     }
     time = json['time'];
@@ -66,7 +67,7 @@ class MetaWeatherModel {
 class WeatherReport {
   int? id;
   String? weatherStateName;
-  String? weatherStateAbbr;
+  WeatherTypes? weather;
   String? windDirectionCompass;
   String? created;
   String? applicableDate;
@@ -74,7 +75,7 @@ class WeatherReport {
   double? maxTemp;
   double? theTemp;
   double? windSpeed;
-  double? windDirection;
+  String? windDirection;
   double? airPressure;
   int? humidity;
   double? visibility;
@@ -83,7 +84,7 @@ class WeatherReport {
   WeatherReport(
       {this.id,
       this.weatherStateName,
-      this.weatherStateAbbr,
+      this.weather,
       this.windDirectionCompass,
       this.created,
       this.applicableDate,
@@ -100,15 +101,15 @@ class WeatherReport {
   WeatherReport.fromServer(Map<String, dynamic> json) {
     id = json['id'];
     weatherStateName = json['weather_state_name'];
-    weatherStateAbbr = json['weather_state_abbr'];
-    windDirectionCompass = json['wind_direction_compass'];
+
+    weather = WeatherExtension.tryParse(json['wind_direction_compass'], ifNull: WeatherTypes.c);
     created = json['created'];
     applicableDate = json['applicable_date'];
     minTemp = json['min_temp'];
     maxTemp = json['max_temp'];
     theTemp = json['the_temp'];
     windSpeed = json['wind_speed'];
-    windDirection = json['wind_direction'];
+    windDirection = json['wind_direction_compass'];
     airPressure = json['air_pressure'];
     humidity = json['humidity'];
     visibility = json['visibility'];
