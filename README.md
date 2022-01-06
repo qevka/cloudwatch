@@ -29,6 +29,7 @@
 >   * The Metaweather api doesn't include all the cities in the US or world just a small subset. If we continued using this API we could make a function that would return the lat and lon for specific cities, then we could query the api using lat and lon which then would return the id for the nearest city. Having a way to get the (woeid) for the nearest available city would be helpful.
 >   * The ability to see a whole weeks forcast instead of just the current weather.
 >   * Ability to persist different locations or a home location so that the user doesn't have to keep to keep entering their city in over and over again.
+>   * Better code coverage with unit tests.
 
 # How to run the App
 >   1. Clone the repo to a local directory on your PC or Mac
