@@ -41,7 +41,7 @@ flutter run --release
 ## Usage
 
 ```sh
-Open this project in android studio, or vscode and build it on simulator to try it out.
+Open this project in android studio, or vscode and run this command in the terminal from the root directory of the project.
 ```
 
 ## Run tests
