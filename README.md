@@ -30,6 +30,32 @@
 >   * The ability to see a whole weeks forcast instead of just the current weather.
 >   * Ability to persist different locations or a home location so that the user doesn't have to keep to keep entering their city in over and over again.
 
+## How to run the App
+>   1. Clone the repo to a local directory on your PC or Mac
+>   2. Open the App in Android Studio, VSCode, or XCode (if opening in xcode be sure to open the /cloudwatch/ios/Runner.xcworkspace file).
+> Running the App
+>   3a. Android Studio - click the play button on the top of the IDE (make sure you have a simulator selected).
+>   3b. XCode - Open the IDE and click the play button at the top of the window
+>   3c. VSCODE/Terminal - open a terminal window and type the following commands
+
+## open a simulator
+
+```sh
+open -a simulator
+```
+
+> From the root directory of the the project run the following command in terminal.
+
+```sh
+Flutter run
+```
+
+> If you have a real device plugged in and want to build on that device and be able to unplug from your PC or Mac after use the following --release flag.
+
+```sh
+Flutter run --release
+```
+
 ### 🏠 [Homepage](https://github.com/qevka/cloudwatch#readme)
 
 ## Install
