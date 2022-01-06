@@ -11,8 +11,8 @@
   </a>
 </p>
 
-> ![cloudwatch - Weather App](assets/rain.gif)
-> ![cloudwatch - Weather App](assets/snow.gif)
+> ![cloudwatch - Weather App](assets/thunder.gif)
+> ![cloudwatch - Weather App](assets/clear.png)
 > 
 > This is a simple app that queries the metaweather api and displays weather data from around the world.
 > 
