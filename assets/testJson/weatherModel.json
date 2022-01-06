@@ -1,0 +1,74 @@
+{
+"consolidated_weather": [
+{
+"id": 6011643755495424,
+"weather_state_name": "Heavy Rain",
+"weather_state_abbr": "hr",
+"wind_direction_compass": "ENE",
+"created": "2022-01-05T22:23:34.650639Z",
+"applicable_date": "2022-01-05",
+"min_temp": 0.905,
+"max_temp": 4.0,
+"the_temp": 3.465,
+"wind_speed": 2.214641221103423,
+"wind_direction": 74.57502550678916,
+"air_pressure": 1022.5,
+"humidity": 94,
+"visibility": 6.9205216535433065,
+"predictability": 77
+}
+],
+"time": "2022-01-05T14:59:15.955122-08:00",
+"sun_rise": "2022-01-05T07:57:04.720788-08:00",
+"sun_set": "2022-01-05T16:31:47.415556-08:00",
+"timezone_name": "LMT",
+"parent": {
+"title": "Washington",
+"location_type": "Region / State / Province",
+"woeid": 2347606,
+"latt_long": "47.2755146,-120.8506483"
+},
+"sources": [
+{
+"title": "BBC",
+"slug": "bbc",
+"url": "http://www.bbc.co.uk/weather/",
+"crawl_rate": 360
+},
+{
+"title": "Forecast.io",
+"slug": "forecast-io",
+"url": "http://forecast.io/",
+"crawl_rate": 480
+},
+{
+"title": "HAMweather",
+"slug": "hamweather",
+"url": "http://www.hamweather.com/",
+"crawl_rate": 360
+},
+{
+"title": "Met Office",
+"slug": "met-office",
+"url": "http://www.metoffice.gov.uk/",
+"crawl_rate": 180
+},
+{
+"title": "OpenWeatherMap",
+"slug": "openweathermap",
+"url": "http://openweathermap.org/",
+"crawl_rate": 360
+},
+{
+"title": "World Weather Online",
+"slug": "world-weather-online",
+"url": "http://www.worldweatheronline.com/",
+"crawl_rate": 360
+}
+],
+"title": "Seattle",
+"location_type": "City",
+"woeid": 2490383,
+"latt_long": "47.603561,-122.329437",
+"timezone": "US/Pacific"
+}

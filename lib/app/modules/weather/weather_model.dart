@@ -1,4 +1,4 @@
-import 'package:cloudwatch/Screens/weather/weather_types.dart';
+import 'package:cloudwatch/app/modules/weather/weather_types.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'weather_model.g.dart';
@@ -57,10 +57,10 @@ class WeatherModel {
     timezone = json['timezone'];
   }
 
-  factory WeatherModel.fromJson(Map<String, dynamic> json) => _$MetaWeatherModelFromJson(json);
+  factory WeatherModel.fromJson(Map<String, dynamic> json) => _$WeatherModelFromJson(json);
 
   /// Connect the generated [_$MetaWeatherModelToJson] function to the `toJson` method.
-  Map<String, dynamic> toJson() => _$MetaWeatherModelToJson(this);
+  Map<String, dynamic> toJson() => _$WeatherModelToJson(this);
 }
 
 @JsonSerializable()
@@ -101,8 +101,7 @@ class WeatherReport {
   WeatherReport.fromServer(Map<String, dynamic> json) {
     id = json['id'];
     weatherStateName = json['weather_state_name'];
-
-    weather = WeatherExtension.tryParse(json['wind_direction_compass'], ifNull: WeatherTypes.c);
+    weather = WeatherExtension.tryParse(json["weather_state_abbr"], ifNull: WeatherTypes.c);
     created = json['created'];
     applicableDate = json['applicable_date'];
     minTemp = json['min_temp'];
