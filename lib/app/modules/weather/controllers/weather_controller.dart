@@ -38,8 +38,8 @@ class WeatherController extends GetxController {
       weatherModel.value = await service.fetchWeather(forCity.woeid.toString());
     }
     loading.value = false;
-    weather.value = weatherModel.value!.weatherReports![0].weather!;
-    report.value = weatherModel.value!.weatherReports![0];
+    weather.value = weatherModel.value!.consolidatedWeather![0].weatherTypes!;
+    report.value = weatherModel.value!.consolidatedWeather![0];
     print(report.value!.maxTemp);
     updateTemp(_box.read('tempUnit') ?? true);
     super.onInit();

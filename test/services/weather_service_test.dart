@@ -44,5 +44,15 @@ main() {
       final service = WeatherService(client: mockClient);
       expect(() async => await service.fetchCity("test"), throwsException);
     });
+
+    test('status != 200', () async {
+      final file = File('assets/testJson/weatherModel.json');
+      final json = jsonDecode(await file.readAsString());
+      final mockClient = MockClient((request) async {
+        return Response(jsonEncode(json), 500);
+      });
+      final service = WeatherService(client: mockClient);
+      expect(() async => await service.fetchCity("test"), throwsException);
+    });
   });
 }

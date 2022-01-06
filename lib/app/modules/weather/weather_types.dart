@@ -25,6 +25,10 @@ extension WeatherExtension on WeatherTypes {
     }
   }
 
+  String get stringVal {
+    return toString().split(".").last;
+  }
+
   LinearGradient get gradient {
     switch (this) {
       case WeatherTypes.h:
