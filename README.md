@@ -33,12 +33,12 @@
 ## How to run the App
 >   1. Clone the repo to a local directory on your PC or Mac
 >   2. Open the App in Android Studio, VSCode, or XCode (if opening in xcode be sure to open the /cloudwatch/ios/Runner.xcworkspace file).
-> Running the App
->   3a. Android Studio - click the play button on the top of the IDE (make sure you have a simulator selected).
->   3b. XCode - Open the IDE and click the play button at the top of the window
->   3c. VSCODE/Terminal - open a terminal window and type the following commands
+# How to Run on different IDEs
+>   * Android Studio - click the play button on the top of the IDE (make sure you have a simulator selected).
+>   * XCode - Open the IDE and click the play button at the top of the window
+>   * VSCODE/Terminal - open a terminal window and type the following commands
 
-## open a simulator
+# open a simulator
 
 ```sh
 open -a simulator
@@ -56,13 +56,6 @@ Flutter run
 Flutter run --release
 ```
 
-### 🏠 [Homepage](https://github.com/qevka/cloudwatch#readme)
-
-## Install
-
-```sh
-flutter run --release
-```
 
 ## Run tests
 
