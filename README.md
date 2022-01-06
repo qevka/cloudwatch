@@ -1,8 +1,5 @@
 <h1 align="center">Welcome to cloudwatch 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/cloudwatch" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/cloudwatch.svg">
-  </a>
   <a href="https://github.com/qevka/cloudwatch#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -15,6 +12,13 @@
 </p>
 
 > This is a simple app that queries the metaweather api and displays weather data from around the world.
+> Features
+>   * Getx Statemanagement (dependency injection / MVC)
+>   * Ability to change Temperature Units (Celsius/Fehrenheit)
+>   * Particle Animators for different weather conditions
+>   * Data models that include all of MetaWeathers datapoints for possibility of future featuer development
+>   * Separate Settings screen for future settings.
+>   * Settings persist after app is closed.
 
 ### 🏠 [Homepage](https://github.com/qevka/cloudwatch#readme)
 
