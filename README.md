@@ -30,15 +30,15 @@
 >   * The ability to see a whole weeks forcast instead of just the current weather.
 >   * Ability to persist different locations or a home location so that the user doesn't have to keep to keep entering their city in over and over again.
 
-## How to run the App
+# How to run the App
 >   1. Clone the repo to a local directory on your PC or Mac
 >   2. Open the App in Android Studio, VSCode, or XCode (if opening in xcode be sure to open the /cloudwatch/ios/Runner.xcworkspace file).
-# How to Run on different IDEs
+### How to Run on different IDEs
 >   * Android Studio - click the play button on the top of the IDE (make sure you have a simulator selected).
 >   * XCode - Open the IDE and click the play button at the top of the window
 >   * VSCODE/Terminal - open a terminal window and type the following commands
 
-# open a simulator
+### open a simulator
 
 > run the command below to open a new IOS simulator instance.
 
@@ -59,7 +59,7 @@ Flutter run --release
 ```
 
 
-## Run tests
+### Run tests
 
 ```sh
 flutter test
