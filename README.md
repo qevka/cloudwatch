@@ -10,7 +10,8 @@
     <img alt="License: ISC" src="https://img.shields.io/github/license/qevka/cloudwatch" />
   </a>
 </p>
-
+![cloudwatch - Weather App](assets/rain.gif)
+![cloudwatch - Weather App](assets/snow.gif)
 > This is a simple app that queries the metaweather api and displays weather data from around the world.
 > 
 > Core Features
