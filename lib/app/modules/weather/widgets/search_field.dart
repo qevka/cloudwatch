@@ -34,7 +34,7 @@ class SearchField extends StatelessWidget {
                           fillColor: Colors.white,
                           border: InputBorder.none,
                           hintText: "City",
-                          hintStyle: TextStyle(color: Colors.white30, fontWeight: FontWeight.w200)),
+                          hintStyle: TextStyle(color: Colors.white, fontWeight: FontWeight.w200)),
                       controller: editControl,
                       onChanged: (val) {
                         value = val;

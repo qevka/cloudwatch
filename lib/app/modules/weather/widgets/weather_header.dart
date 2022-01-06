@@ -29,7 +29,7 @@ class WeatherHeader extends StatelessWidget {
                 controller.temp.toString() + "°",
                 style: GoogleFonts.spartan(
                     textStyle:
-                        TextStyle(fontSize: 180, fontWeight: FontWeight.w400, color: controller.weather.value!.textColors)),
+                        TextStyle(fontSize: 165, fontWeight: FontWeight.w400, color: controller.weather.value!.textColors)),
               );
             })
           ],

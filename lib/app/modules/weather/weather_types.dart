@@ -1,27 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_weather_bg_null_safety/bg/weather_bg.dart';
+import 'package:flutter_weather_bg_null_safety/utils/weather_type.dart';
 import 'package:get/get.dart';
 import 'package:parallax_rain/parallax_rain.dart';
-import 'package:particles_flutter/particles_flutter.dart';
 
 enum WeatherTypes { sn, sl, h, t, hr, lr, s, hc, lc, c }
 
 extension WeatherExtension on WeatherTypes {
   Widget get animation {
     switch (this) {
+      case WeatherTypes.hc:
+        return WeatherBg(
+          weatherType: WeatherType.overcast,
+          width: Get.width,
+          height: Get.height,
+        );
+      case WeatherTypes.lc:
+        var beforeDark = DateTime.now().hour < 18;
+        return WeatherBg(
+          weatherType: beforeDark ? WeatherType.cloudy : WeatherType.cloudyNight,
+          width: Get.width,
+          height: Get.height,
+        );
+      case WeatherTypes.t:
+        return WeatherBg(
+          weatherType: WeatherType.thunder,
+          width: Get.width,
+          height: Get.height,
+        );
       case WeatherTypes.h:
         return _sleet;
       case WeatherTypes.sl:
         return _sleet;
       case WeatherTypes.sn:
-        return _snow;
+        return WeatherBg(
+          weatherType: WeatherType.heavySnow,
+          width: Get.width,
+          height: Get.height,
+        );
       case WeatherTypes.hr:
-        return _heavyRain;
+        return WeatherBg(
+          weatherType: WeatherType.heavyRainy,
+          width: Get.width,
+          height: Get.height,
+        );
       case WeatherTypes.lr:
-        return _ligthRain;
+        return WeatherBg(
+          weatherType: WeatherType.lightRainy,
+          width: Get.width,
+          height: Get.height,
+        );
       case WeatherTypes.s:
-        return _mediumRain;
+        return WeatherBg(
+          weatherType: WeatherType.lightRainy,
+          width: Get.width,
+          height: Get.height,
+        );
       default:
-        return Container();
+        return WeatherBg(
+          weatherType: WeatherType.sunny,
+          width: Get.width,
+          height: Get.height,
+        );
     }
   }
 
@@ -31,22 +71,6 @@ extension WeatherExtension on WeatherTypes {
 
   LinearGradient get gradient {
     switch (this) {
-      case WeatherTypes.h:
-        return const LinearGradient(
-            begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.lightGreen, Colors.green]);
-      case WeatherTypes.sl:
-        return const LinearGradient(
-            begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.lightGreen, Colors.green]);
-      case WeatherTypes.c:
-        return LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [
-          Colors.lightBlueAccent,
-          Colors.lightBlueAccent,
-          Colors.lightBlueAccent,
-          Colors.lightBlueAccent,
-          Colors.lightBlueAccent,
-          Colors.green.shade200,
-          Colors.amber.shade100
-        ]);
       default:
         return LinearGradient(
             begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Colors.blue.shade900, Colors.lightBlueAccent]);
@@ -59,60 +83,6 @@ extension WeatherExtension on WeatherTypes {
         return Colors.white;
     }
   }
-
-  // These are animations to be shown for different weather conditions.
-  static final _snow = CircularParticle(
-    onTapAnimation: false,
-    key: UniqueKey(),
-    awayRadius: 50,
-    numberOfParticles: 1000,
-    speedOfParticles: 3,
-    height: Get.height,
-    width: Get.width,
-    particleColor: Colors.white.withAlpha(150),
-    awayAnimationDuration: Duration(milliseconds: 600),
-    maxParticleSize: 7,
-    isRandSize: true,
-    isRandomColor: false,
-    awayAnimationCurve: Curves.bounceInOut,
-    enableHover: false,
-    hoverColor: Colors.white,
-    hoverRadius: 0,
-    connectDots: false, //not recommended
-  );
-
-  static final _heavyRain = Container(
-    height: Get.height,
-    width: Get.width,
-    child: ParallaxRain(
-      dropFallSpeed: 4,
-      dropColors: [Colors.blue, Colors.blueGrey, Colors.lightBlue],
-    ),
-  );
-
-  static final _mediumRain = Container(
-    height: Get.height,
-    width: Get.width,
-    child: ParallaxRain(
-      numberOfDrops: 400,
-      numberOfLayers: 5,
-      dropHeight: 3,
-      dropFallSpeed: 3,
-      dropColors: [Colors.blue, Colors.lightBlueAccent],
-    ),
-  );
-
-  static final _ligthRain = Container(
-    height: Get.height,
-    width: Get.width,
-    child: ParallaxRain(
-      numberOfDrops: 200,
-      numberOfLayers: 5,
-      dropHeight: 3,
-      dropFallSpeed: 2.5,
-      dropColors: [Colors.blue, Colors.lightBlueAccent],
-    ),
-  );
 
   static final _sleet = Container(
     height: Get.height,

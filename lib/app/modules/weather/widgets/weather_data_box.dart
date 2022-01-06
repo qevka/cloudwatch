@@ -24,7 +24,7 @@ class WeatherDataBox extends StatelessWidget {
               weather: controller.weather.value!,
             ),
             WeatherDataPoint(
-              data: controller.report.value!.windDirection.toString(),
+              data: controller.report.value!.windDirection!.toInt().toString(),
               title: "Wind Direction",
               weather: controller.weather.value!,
             ),
