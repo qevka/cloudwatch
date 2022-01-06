@@ -16,7 +16,7 @@
 > 
 > This is a simple app that queries the metaweather api and displays weather data from around the world.
 > 
-> Core Features
+## Core Features
 >   * Getx State Management (dependency injection / MVC).
 >   * Ability to change Temperature Units (Celsius/Fahrenheit).
 >   * Particle Animators for different weather conditions.
@@ -24,7 +24,7 @@
 >   * Separate Settings screen for future settings and cleaner design.
 >   * Settings persist after app is closed.
 > 
-> Potential Improvements
+## Potential Improvements
 >   * Auto-Completing textfield (when someone types a city it shows a list of citys that match what they have typed so far) like google maps.
 >   * The Metaweather api doesn't include all the cities in the US or world just a small subset. If we continued using this API we could make a function that would return the lat and lon for specific cities, then we could query the api using lat and lon which then would return the id for the nearest city. Having a way to get the (woeid) for the nearest available city would be helpful.
 >   * The ability to see a whole weeks forcast instead of just the current weather.
@@ -36,12 +36,6 @@
 
 ```sh
 flutter run --release
-```
-
-## Usage
-
-```sh
-Open this project in android studio, or vscode and run this command in the terminal from the root directory of the project.
 ```
 
 ## Run tests
