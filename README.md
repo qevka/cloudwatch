@@ -14,23 +14,18 @@
 > This is a simple app that queries the metaweather api and displays weather data from around the world.
 > 
 > Core Features
->   * Getx Statemanagement (dependency injection / MVC)
->   * Ability to change Temperature Units (Celsius/Fehrenheit)
->   * Particle Animators for different weather conditions
->   * Data models that include all of MetaWeathers datapoints for possibility of future featuer development
->   * Separate Settings screen for future settings.
+>   * Getx State Management (dependency injection / MVC).
+>   * Ability to change Temperature Units (Celsius/Fahrenheit).
+>   * Particle Animators for different weather conditions.
+>   * Data models that include all of MetaWeather's data points for possibility of future feature development.
+>   * Separate Settings screen for future settings and cleaner design.
 >   * Settings persist after app is closed.
 > 
 > Potential Improvements
->   * Auto-Completing textfield (when someone types a city it shows a list 
-      > of citys that match what they have typed so far) Think google maps.
->   * The Metaweather api doesnt include all the cities in the US or world just a small subset.
-      >if we continued using this API we could make a function that would return the lat and lon for 
-      >specific cities, then we could query the api using lat and lon which then would return the id
-      >for the nearest city, this would make it possible of people to find the city closest to them.
+>   * Auto-Completing textfield (when someone types a city it shows a list of citys that match what they have typed so far) like google maps.
+>   * The Metaweather api doesn't include all the cities in the US or world just a small subset. If we continued using this API we could make a function that would return the lat and lon for specific cities, then we could query the api using lat and lon which then would return the id for the nearest city, this would make it possible of people to find the city closest to them.
 >   * The ability to see a whole weeks forcast instead of just the current weather.
->   * Ability to persist different locations or a home location so that the user doesn't have to keep
-    > to keep entering their city in over and over again.
+>   * Ability to persist different locations or a home location so that the user doesn't have to keep to keep entering their city in over and over again.
 
 ### 🏠 [Homepage](https://github.com/qevka/cloudwatch#readme)
 
