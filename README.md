@@ -40,6 +40,8 @@
 
 # open a simulator
 
+> run the command below to open a new IOS simulator instance.
+
 ```sh
 open -a simulator
 ```
