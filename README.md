@@ -23,7 +23,7 @@
 > 
 > Potential Improvements
 >   * Auto-Completing textfield (when someone types a city it shows a list of citys that match what they have typed so far) like google maps.
->   * The Metaweather api doesn't include all the cities in the US or world just a small subset. If we continued using this API we could make a function that would return the lat and lon for specific cities, then we could query the api using lat and lon which then would return the id for the nearest city, this would make it possible of people to find the city closest to them.
+>   * The Metaweather api doesn't include all the cities in the US or world just a small subset. If we continued using this API we could make a function that would return the lat and lon for specific cities, then we could query the api using lat and lon which then would return the id for the nearest city. Having a way to get the (woeid) for the nearest available city would be helpful.
 >   * The ability to see a whole weeks forcast instead of just the current weather.
 >   * Ability to persist different locations or a home location so that the user doesn't have to keep to keep entering their city in over and over again.
 
