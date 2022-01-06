@@ -11,9 +11,11 @@
   </a>
 </p>
 
-> This is a simple app that queries the metaweather api and displays weather data from around the world.
 > ![cloudwatch - Weather App](assets/rain.gif)
 > ![cloudwatch - Weather App](assets/snow.gif)
+> 
+> This is a simple app that queries the metaweather api and displays weather data from around the world.
+> 
 > Core Features
 >   * Getx State Management (dependency injection / MVC).
 >   * Ability to change Temperature Units (Celsius/Fahrenheit).
