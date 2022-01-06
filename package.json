@@ -1,0 +1,31 @@
+{
+  "name": "cloudwatch",
+  "version": "1.0.0",
+  "description": "a place for some dependencies related to readme generation",
+  "main": "package.json",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qevka/cloudwatch.git"
+  },
+  "keywords": [
+    "cloudwatch",
+    "weather",
+    "app"
+  ],
+  "author": "Caleb Maccarone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qevka/cloudwatch/issues"
+  },
+  "homepage": "https://github.com/qevka/cloudwatch#readme",
+  "dependencies": {
+    "readme-md-generator": "^1.0.0"
+  }
+}

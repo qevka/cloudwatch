@@ -1,8 +1,5 @@
 <h1 align="center">Welcome to cloudwatch 👋</h1>
 <p>
-  <a href="https://www.npmjs.com/package/cloudwatch" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/cloudwatch.svg">
-  </a>
   <a href="https://github.com/qevka/cloudwatch#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
